@@ -1,8 +1,10 @@
 <h1><%= @task.title %></h1>
 <h2><%= @task.details %></h2>
-<% if @task.completed == true %>
+<% if @task.completed %>
 <p> <%= "task complete" %> </p>
 <% end %>
 
 <%= link_to "back", "/tasks" %>
+<%= link_to "edit", edit_task_path(@task) %>
+<%= link_to "delete", destroy_task_path(@task), method: "delete" %>
 
